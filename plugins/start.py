@@ -79,19 +79,17 @@ async def start_command(client: Client, message: Message):
             )
 
             try:
-                media = await msg.copy(
+                await msg.copy(
                     chat_id=message.from_user.id,
                     caption = caption,
                     parse_mode=ParseMode.HTML,
                     reply_markup=reply_markup,
                     protect_content=PROTECT_CONTENT
                 )
-                alert = await message.reply('<b>Hello 👋🏻 Join Below Channels</b>\n\n<a href="https://t.me/+5w5NhnxWNuxiMTdl">😍Zee Kannada👈</a>\n<a href="https://t.me/+eyStLOpHapMzNGZl">😍Colors Kannada👈</a>\n<a href="https://t.me/+a1lv-BSLVk4wYzE9">😍Star Suvarna👈</a>\n<a href="https://t.me/+IStRuJMAzAZlMjU1">😍Old Episode👈</a>')
-                await asyncio.sleep(10)
-                await alert.delete()
+                await asyncio.sleep(0.5)
             except FloodWait as error:
                 await asyncio.sleep(error.x)
-                media = await msg.copy(
+                await msg.copy(
                     chat_id=message.from_user.id,
                     caption = caption,
                     parse_mode=ParseMode.HTML,
